@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>包厢送祝福</title>
+           <style>
+           table
+           {border-collapse: collapse;}
+           table, td, th {
+               border: 1px solid black;}
+</style>
+</head>
+<body>
+<input style="font-size: 20px" type="text" id="barcode" placeholder="请输入绑定码" value={{ bindCode }}>
+<table>
+  <tr>
+    <th>简介</th>
+    <th>地址</th>
+      <th>操作</th>
+  </tr>
+ <tr>
+    <td>中间页v1</td>
+      <td id="id15">http://192.168.96.40:81/bless/act?barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id15')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(1)">提交</button>
+		</div>
+    </td>
+  </tr>
+
+  <tr>
+    <td>文字+表情</td>
+    <td id="id16">http://192.168.96.40:81/bless/act/v2?barcode=</td>
+      <td><div class="container">
+			<button onclick="Copy2('id16')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(2)">提交</button>
+		</div>
+      </td>
+  </tr>
+
+    <tr>
+    <td>文字+照片</td>
+    <td id="id17">http://192.168.96.40:81/bless/act/v3?barcode= </td>
+      <td><div class="container">
+			<button onclick="Copy2('id17')">复制</button>
+		</div>
+        <div class="container">
+		<button onclick="tar(3)">提交</button>
+		</div>
+      </td>
+  </tr>
+ <tr>
+    <td>中间页v4(新用户)</td>
+      <td id="id18">http://192.168.96.40:81/bless/act/v4?barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id18')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(4)">提交</button>
+		</div>
+    </td>
+  </tr>
+   <tr>
+    <td>中间页v5</td>
+      <td id="id19">http://192.168.96.40:81/bless/act/v5?barcode= </td>
+    <td><div class="container">
+			<button onclick="Copy2('id19')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(5)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>中间页v6</td>
+      <td id="id20">http://192.168.96.40:81/bless/act/v6?barcode= </td>
+    <td><div class="container">
+			<button onclick="Copy2('id20')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(6)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>中间页v7(老用户)</td>
+      <td id="id21">http://192.168.96.40:81/bless/act/v7?barcode= </td>
+    <td><div class="container">
+			<button onclick="Copy2('id21')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(7)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>实物送礼</td>
+      <td id="id22">http://192.168.96.40:81/bless/wxshop?barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id22')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(8)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>实物送礼v3.0</td>
+      <td id="id1" onclick="Copy(this.id)">http://192.168.96.40:81/bless/wxgift</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/bless/wxgift')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>单个送礼</td>
+    <td id="id23">http://192.168.96.40:81/bless/wxserver?barcode= </td>
+    <td><div class="container">
+			<button onclick="copy2('id23')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(10)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>照片祝福</td>
+      <td id="id2" onclick="Copy(this.id)">http://192.168.96.40:81/bless/wximage</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('httphttp://192.168.96.40:81/bless/wximage')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>新版首页</td>
+      <td id="id24">http://192.168.96.40:81/bless/wxtheme?barcode=</td>
+    <td><div class="container">
+			<button onclick="copy2('id24')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(12)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+       <td>微信各渠道入口-微信-Banner</td>
+      <td id="id3" onclick="Copy(this.id)">http://192.168.96.40:81/bless/wx/?kpm_channel=11010101</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010101')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>微信各渠道入口-微信-遥控</td>
+      <td id="id4" onclick="Copy(this.id)">http://192.168.96.40:81/bless/wx/?kpm_channel=11010301</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010301')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>微信各渠道入口-w微信-弹幕</td>
+      <td id="id5" onclick="Copy(this.id)">http://192.168.96.40:81/bless/wx/?kpm_channel=11010302</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://192.168.96.40:81/bless/wx/?kpm_channel=11010302')">提交</button>
+		</div>
+    </td>
+  </tr>
+  <tr>
+    <td>微信各渠道入口-微信-K歌首页</td>
+      <td id="id6" onclick="Copy(this.id)">http://192.168.96.40:81/bless/wx/?kpm_channel=11010303</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010303')">提交</button>
+		</div>
+    </td>
+  </tr>
+
+    <tr>
+    <td>微信各渠道入口-微信-娱乐版块</td>
+      <td id="id7" onclick="Copy(this.id)">http://192.168.96.40:81/bless/wx/?kpm_channel=11010304</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010304')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>微信各渠道入口-微信公众号-支付后模板消息</td>
+      <td id="id8" onclick="Copy(this.id)">http://192.168.96.40:81/bless/wx/?kpm_channel=11010401</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010401')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>APP各渠道入口-APP-banner</td>
+      <td id="id9" onclick="Copy(this.id)">http://192.168.96.40:81/bless/app/?kpm_channel=11010501</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/bless/app/?kpm_channel=11010501')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>APP各渠道入口-APP-遥控</td>
+      <td id="id10" onclick="Copy(this.id)">http://192.168.96.40:81/bless/app/?kpm_channel=11010601</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/bless/app/?kpm_channel=11010601')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>APP各渠道入口-K歌首页</td>
+      <td id="id11" onclick="Copy(this.id)">http://192.168.96.40:81/bless/wx/?kpm_channel=11010502</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010502')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>APP各渠道入口-APP-娱乐版块</td>
+      <td id="id12" onclick="Copy(this.id)">http://192.168.96.40:81/bless/wx/?kpm_channel=11010602</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010602')">提交</button>
+		</div>
+    </td>
+  </tr>
+
+</table>
+<script>
+
+
+            function tar(type) {
+                var code = document.getElementById("barcode").value;
+                console.log(code);
+                if (!code) {
+                    alert("绑定码不能为空");
+                    return;
+                }
+
+                if (type === 1) {	//开启红包游戏
+                 window.open ( 'http://192.168.96.40:81/bless/act?barcode=' + code);
+                } else if (type === 2) {	//开启炸弹游戏
+                    window.open ( 'http://192.168.96.40:81/bless/act/v2?barcode=' + code);
+                } else if (type === 3) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:81/bless/act/v3?barcode=' + code) ;}
+                     else if (type === 4) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:81/bless/act/v4?barcode=' + code) ;}
+                    else if (type ===5) {	//开启飞刀游戏
+                    window.open ('http://192.168.96.40:81/bless/act/v5?barcode=' + code) ;}
+                    else if (type === 6) {	//开启飞刀游戏
+                    window.open ( 'http://192.168.96.40:81/bless/act/v6?barcode=' + code);}
+                    else if (type === 7) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:81/bless/act/v7?barcode=' + code);}
+                    else if (type === 8) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:81/bless/wxshop?barcode=' + code);}
+                    else if (type === 9) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:81/bless/wxgift');}
+                    else if (type === 10) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:81/bless/wxserver?barcode=' + code);}
+                    else if (type === 11) {	//开启飞刀游戏
+                    window.open ( 'http://192.168.96.40:81/bless/wximage');}
+                    else if (type === 12) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:81/bless/wxtheme?barcode=' + code);}
+                    else if (type === 13) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010101');}
+                    else if (type === 14) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010301');}
+                      else if (type === 15) {	//开启飞刀游戏
+                    window.open ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010302');}
+                      else if (type === 16) {	//开启飞刀游戏
+                    window.open ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010303');}
+                      else if (type === 17) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010304');}
+                      else if (type === 18) {	//开启飞刀游戏
+                    window.open ( 'http://192.168.96.40:81/bless/wx/?kpm_channel=11010401');}
+                      else if (type === 19) {	//开启飞刀游戏
+                    window.open ( 'http://192.168.96.40:81/bless/app/?kpm_channel=11010501');}
+                      else if (type === 20) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:81/bless/app/?kpm_channel=11010601');}
+                     else  if (type === 21 )///飞刀游戏
+                   {window.open ('http://192.168.96.40:81/bless/wx/?kpm_channel=11010502');}
+                     else  if (type === 22)	//开启飞刀游戏
+                   {window.open ( 'http://192.168.96.40:81/bless/wx/?kpm_channel=11010602');}
+
+
+			}
+			function Copy(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');}
+             function Copy2(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                 var code = document.getElementById("barcode").value;
+                // document.getElementById('id').innerHTML= document.getElementById('id').innerHTML+ document.getElementById('barCode').value
+                 console.log(Url2);
+                 console.log(code);
+                Url2=Url2+code;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');
+    }
+
+</script>
+</body>
+</html>
+
+
+
+
+

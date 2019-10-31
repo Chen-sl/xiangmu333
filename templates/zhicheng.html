@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支撑业务</title>
+           <style>
+           table
+           {border-collapse: collapse;}
+           table, td, th {
+               border: 1px solid black;}
+</style>
+</head>
+<body>
+<input  style="font-size: 20px" type="text" id="barcode" placeholder="请输入绑定码" value={{ bindCode }}>
+<table>
+  <tr>
+    <th>简介</th>
+    <th>地址</th>
+      <th>操作</th>
+  </tr>
+ <tr>
+    <td>文件下载 </td>
+      <td id="id2">http://192.168.96.35:7070/FileService/downloadstorefile.do?fileid=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id2')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(1)">提交</button>
+		</div>
+    </td>
+  </tr>
+
+  <tr>
+    <td>文件上传</td>
+    <td id="id1" onclick="Copy(this.id)">ttp://192.168.96.35:7070/FileService/uploadstorefile.do</td>
+      <td>
+        <div class="container">
+			<button onclick="window.open ( 'ttp://192.168.96.35:7070/FileService/uploadstorefile.do')">提交</button>
+		</div>
+      </td>
+  </tr>
+
+</table>
+<script>
+
+
+            function tar(type) {
+                var code = document.getElementById("barcode").value;
+                console.log(code);
+                if (!code) {
+                    alert("绑定码不能为空");
+                    return;
+                }
+
+                if (type === 1) {	//开启红包游戏
+                 window.open ('http://192.168.96.35:7070/FileService/downloadstorefile.do?fileid=' + code);
+                }
+			}
+			function Copy(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+               document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');
+    }
+    function Copy2(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                var code = document.getElementById("barcode").value;
+                console.log(url2);
+                console.log(code);
+                url2=url2+code;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+               document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');
+    }
+</script>
+</body>
+</html>

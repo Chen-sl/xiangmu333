@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智慧KTV相关</title>
+           <style>
+           table
+           {border-collapse: collapse;}
+           table, td, th {
+               border: 1px solid black;}
+</style>
+</head>
+<body>
+{#<input type="text" id="barcode" placeholder="请输入绑定码">#}
+<table>
+  <tr>
+    <th>简介</th>
+    <th>地址</th>
+      <th>操作</th>
+  </tr>
+ <tr>
+    <td>K米会员卡申领</td>
+      <td id="id1" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/MembershipCard/apply</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://kmtest.ktvme.com:3007/User/MembershipCard/apply')">提交</button>
+		</div>
+        </td>
+  </tr>
+
+  <tr>
+    <td>在线超市（微信端）外网</td>
+    <td id="id2" onclick="Copy(this.id)">http://wechatsupermarket.ktvme.com/Route/index/linksource/kmwechat</td>
+      <td>
+        <div class="container">
+			<button onclick=" window.open('http://wechatsupermarket.ktvme.com/Route/index/linksource/kmwechat')">提交</button>
+		</div>
+      </td>
+  </tr>
+
+</table>
+<script>
+
+
+            function tar(type) {
+                var code = document.getElementById("barcode").value;
+                console.log(code);
+                if (!code) {
+                    alert("绑定码不能为空");
+
+                }
+
+
+			}
+			function Copy(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');}
+</script>
+</body>
+</html>

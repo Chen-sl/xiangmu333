@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIP特权</title>
+           <style>
+           table
+           {border-collapse: collapse;}
+           table, td, th {
+               border: 1px solid black;}
+</style>
+</head>
+
+<body>
+{#<input type="text" id="barcode" placeholder="请输入绑定码">#}
+<table>
+  <tr>
+    <th>简介</th>
+    <th>地址</th>
+      <th>操作</th>
+  </tr>
+ <tr>
+    <td>充值VIP</td>
+      <td id="id1" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/Vip/wechat</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://kmtest.ktvme.com:3007/User/Vip/wechat')">提交</button>
+		</div>
+    </td>
+  </tr>
+
+  <tr>
+    <td>赠送VIP（花生壳）</td>
+    <td id="id2" onclick="Copy(this.id)">http://ktvme.imwork.net/User/GivenVip/start</td>
+      <td>
+        <div class="container">
+			<button onclick="window.open('http://ktvme.imwork.net/User/GivenVip/start')">提交</button>
+		</div>
+      </td>
+  </tr>
+
+    <tr>
+    <td>购买VIP-iOS支持微信支付</td>
+    <td id="id3" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/Vip/app?upt=1</td>
+      <td>
+        <div class="container">
+			<button onclick="window.open('http://kmtest.ktvme.com:3007/User/Vip/app?upt=1')">提交</button>
+		</div>
+      </td>
+  </tr>
+ <tr>
+    <td>手Q充值VIP-qq打开这个页面，点左上角，可以退出</td>
+      <td id="id4" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/Vip?upt=1&closetype=1</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://kmtest.ktvme.com:3007/User/Vip?upt=1&closetype=1')">提交</button>
+		</div>
+    </td>
+  </tr>
+   <tr>
+    <td>幸运大转盘</td>
+       <td id="id5" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/Acti/Turntable/index?activityid=3</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://kmtest.ktvme.com:3007/Acti/Turntable/index?activityid=3')">提交</button>
+		</div>
+       </td>
+  </tr>
+    <tr>
+    <td>月费充值抽奖</td>
+      <td id="id6" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/VipActivity/luck</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://kmtest.ktvme.com:3007/User/VipActivity/luck')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>年费充值抽奖</td>
+      <td id="id7" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/VipActivity/luckyear</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://kmtest.ktvme.com:3007/User/VipActivity/luckyear')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>QQ svip魔法表情</td>
+      <td id="id8" onclick="Copy(this.id)">	http://192.168.96.40:81/User/SvipPlus/detail</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://192.168.96.40:81/User/SvipPlus/detail')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>QQ SVIP开通</td>
+      <td id="id9" onclick="Copy(this.id)">http://192.168.96.28:8106/Vip/Giving/send?customeridlist=4240920&viptype=1&businessid=131&remark=%E8%B0%83%E8%AF%95qqsvip&operator=yanxiuxin&vipleveltype=3</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://192.168.96.28:8106/Vip/Giving/send?customeridlist=4240920&viptype=1&businessid=131&remark=%E8%B0%83%E8%AF%95qqsvip&operator=yanxiuxin&vipleveltype=3')">提交</button>
+		</div>
+    </td>
+  </tr>
+</table>
+<script>
+
+
+            function tar(type) {
+                var code = document.getElementById("barcode").value;
+                console.log(code);
+                if (!code) {
+                    alert("绑定码不能为空");
+
+                }
+
+			}
+            function Copy(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主题包厢&私人订制</title>
+           <style>
+           table
+           {border-collapse: collapse;}
+           table, td, th {
+               border: 1px solid black;}
+</style>
+</head>
+<input style="font-size: 20px" type="text" id="barcode" placeholder="请输入绑定码" value={{ bindCode }}>
+<body>
+
+<table>
+  <tr>
+    <th>简介</th>
+    <th>地址</th>
+      <th>操作</th>
+  </tr>
+ <tr>
+    <td>魔云7私人定制机顶盒专用</td>
+      <td id="id23">http://192.168.96.24:8100/barcode.php?type=10&barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id23')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(1)">提交</button>
+		</div></td>
+  </tr>
+
+  <tr>
+    <td>私人定制自动绑定</td>
+    <td id="id12">http://kmtest.ktvme.com:3007/Vroom/PrivateCustom/scan?type=12345&barcode=</td>
+      <td><div class="container">
+			<button onclick="Copy2('id12')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(2)">提交</button>
+		</div>
+      </td>
+  </tr>
+
+    <tr>
+    <td>私人定制不会自动绑定</td>
+    <td id="id1" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/Vroom/PrivateCustom/start</td>
+      <td>
+        <div class="container">
+			<button onclick="window.open ('http://kmtest.ktvme.com:3007/Vroom/PrivateCustom/start')">提交</button>
+		</div>
+      </td>
+  </tr>
+ <tr>
+    <td>包厢主题聚会（旧）</td>
+      <td id="id2" onclick="Copy(this.id)">http://192.168.96.40:81/Vroom/ThemeMeal/detail/?thememealid=1</td>
+    <td>
+        <div class="container">
+			<button onclick=" window.open('http://192.168.96.40:81/Vroom/ThemeMeal/detail/?thememealid=1')">提交</button>
+		</div>
+    </td>
+  </tr>
+   <tr>
+    <td>包厢主题聚会（3.0）</td>
+      <td id="id3" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/Vroom/ThemeMeal/klist</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://kmtest.ktvme.com:3007/Vroom/ThemeMeal/klist')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>包厢主题聚会（3.2）</td>
+      <td id="id4" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/Vroom/ThemeMeal/plist</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://kmtest.ktvme.com:3007/Vroom/ThemeMeal/plist')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>包厢主题聚会（3.3）</td>
+      <td id="id5" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/Vroom/ThemeMeal/tlist</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://kmtest.ktvme.com:3007/Vroom/ThemeMeal/tlist')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>包厢主题聚会（3.3.1）</td>
+      <td id="id6" onclick="Copy(this.id)">http://192.168.96.40:81/Vroom/ThemeMeal/nlist</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://192.168.96.40:81/Vroom/ThemeMeal/nlist')">提交</button>
+		</div>
+    </td>
+  </tr>
+        <tr>
+    <td>主题套餐统一列表页面</td>
+      <td id="id7" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/Vroom/ThemeMeal/clist</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://kmtest.ktvme.com:3007/Vroom/ThemeMeal/clist')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>主题中间页</td>
+      <td id="id8" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/wap/app/newThemeFocus</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://kmtest.ktvme.com:3007/wap/app/newThemeFocus')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>骰子欢乐斗</td>
+      <td id="id14">http://192.168.96.40:81/Acti/DiceBattle/?type=12345&barcode=</td>
+        <td>
+            <div class=container">
+                <button onclick="Copy2('id14')">复制</button></div>
+
+
+        <div class="container">
+			<button onclick="tar(3)">提交</button>
+		</div>
+    </td>
+  </tr>
+       <tr> <td>私人定制2.0（魔云8）</td>
+      <td id="id10" onclick="Copy(this.id)">http://192.168.96.23/Vroom/ThemeMeal/custom</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://192.168.96.23/Vroom/ThemeMeal/custom')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>主题3.4.0-收费版</td>
+      <td id="id11">http://kmtest.ktvme.com:3007/Vroom/ThemeMeal/theme?barcode=</td>
+        <td>
+            <div class="container">
+                <button onclick="Copy2('id11')">复制</button>
+            </div>
+
+
+        <div class="container">
+			<button onclick="tar(4)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>主题3.4.0-免费版</td>
+      <td id="id20">http://kmtest.ktvme.com:3007/Vroom/ThemeMeal/theme?isfree=1&barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id20')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(5)">提交</button>
+		</div>
+    </td>
+  </tr>
+</table>
+<script>
+
+
+            function tar(type) {
+                var code = document.getElementById("barcode").value;
+                console.log(code);
+                if (!code) {
+                    alert("绑定码不能为空");
+                    return;
+                }
+
+                if (type === 1) {	//开启红包游戏
+                 window.open ('http://192.168.96.24:8100/barcode.php?type=10&barcode=' + code);
+                } else if (type === 2) {	//开启炸弹游戏
+                    window.open ('http://kmtest.ktvme.com:3007/Vroom/PrivateCustom/scan?type=12345&barcode=' + code);
+                }
+                    else if (type === 3) {	//开启飞刀游戏
+                    window.open ('http://192.168.96.40:81/Acti/DiceBattle/?type=12345&barcode=' + code);}
+
+                    else if (type === 4) {	//开启飞刀游戏
+                    window.open = ('http://kmtest.ktvme.com:3007/Vroom/ThemeMeal/theme?barcode=' + code);}
+                    else if (type === 5) {	//开启飞刀游戏
+                    window.open = ('http://kmtest.ktvme.com:3007/Vroom/ThemeMeal/theme?isfree=1&barcode=' + code);}
+
+			}
+			function Copy(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');}
+            function Copy2(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                 var code = document.getElementById("barcode").value;
+                // document.getElementById('id').innerHTML= document.getElementById('id').innerHTML+ document.getElementById('barCode').value
+                 console.log(Url2);
+                 console.log(code);
+                Url2=Url2+code;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');
+    }
+</script>
+</body>
+</html>

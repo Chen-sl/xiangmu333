@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分屏游戏</title>
+           <style>
+           table
+           {border-collapse: collapse;}
+           table, td, th {
+               border: 1px solid black;}
+</style>
+</head>
+<input  style="font-size: 20px" type="text" id="barcode" placeholder="请输入绑定码" value={{ bindCode }}>
+<body>
+<table>
+  <tr>
+    <th>简介</th>
+    <th>地址</th>
+      <th>操作</th>
+  </tr>
+ <tr>
+    <td>红包摇摇乐</td>
+      <td id="id2">http://192.168.96.40:81/acti/Redking/index?barcode=</td>
+    <td><div class="container">
+			<button id=id2 onclick="Copy2('id2')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(1)">提交</button>
+		</div>
+  </tr>
+
+  <tr>
+    <td>红包摇摇乐（外网）</td>
+    <td id="id3">http://zt.kmigo.cn/acti/redking/?barcode=</td>
+      <td><div class="container">
+			<button onclick="Copy2('id3')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(2)">提交</button>
+		</div>
+  </tr>
+
+    <tr>
+    <td>红包摇摇乐（花生壳</td>
+    <td id="id4">http://ktvme.imwork.net/acti/redking/index?&barcode=</td>
+      <td><div class="container">
+			<button onclick="Copy2('id4')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(3)">提交</button>
+		</div>
+  </tr>
+ <tr>
+    <td>N11-分屏红包</td>
+      <td id="id5">http://192.168.96.40:82/acti/redking/index?&barcode=&ver=82</td>
+    <td><div class="container">
+			<button onclick="Copy2('id5')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(4)">提交</button>
+		</div>
+  </tr>
+   <tr>
+    <td>N20-全屏红包</td>
+      <td id="id6">http://192.168.96.40:82/acti/redking/index?&barcode=&ver=84</td>
+    <td><div class="container">
+			<button onclick="Copy2('id6')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(5)">提交</button>
+		</div>
+  </tr>
+    <tr>
+    <td>免费版红包-全屏版（N20）</td>
+      <td id="id7">http://192.168.96.40:82/acti/redfree/index?&barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id7')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(6)">提交</button>
+		</div>
+  </tr>
+    <tr>
+    <td>免费版红包-分屏版</td>
+      <td id="id8">http://192.168.96.40:81/acti/redfree/index?barcode=&ver=82</td>
+    <td><div class="container">
+			<button onclick="Copy2('id8')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(7)">提交</button>
+		</div>
+  </tr>
+    <tr>
+    <td>传炸弹/td>
+      <td id="id9">http://192.168.96.40:81/Acti/roomBoom/mobile?barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id9')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(8)">提交</button>
+		</div>
+  </tr>
+    <tr>
+    <td>传飞刀</td>
+      <td id="id10">http://192.168.96.40:81/Acti/KnifeHit/mobile?DEBUG=1&barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id10')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(9)">提交</button>
+		</div>
+  </tr>
+    <tr>
+    <td>社交大厅</td>
+      <td id="id11">http://192.168.96.40:81/Vroom/Live/chatroom?barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id11')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(10)">提交</button>
+		</div>
+  </tr>
+        <tr>
+    <td>N30娱乐二维码</td>
+      <td id="id12">http://192.168.96.24:8100/barcode.php?type=0&cc=08204&barcode=&dev=ents</td>
+    <td><div class="container">
+			<button onclick="Copy2('id12')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(11)">提交</button>
+		</div>
+  </tr>
+    <tr>
+    <td>N30娱乐聚合页面</td>
+      <td id="id1" onclick="Copy(this.id)">http://192.168.96.40:81/Vroom/EntertainmentScreen/screen</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Vroom/EntertainmentScreen/screen')">提交</button>
+		</div>
+  </tr>
+</table>
+<script>
+
+
+            function tar(type) {
+                var code = document.getElementById("barcode").value;
+                console.log(code);
+                if (!code) {
+                    alert("绑定码不能为空");
+                    return;
+                }
+
+                if (type === 1) {	//开启红包游戏
+                 window.open ('http://192.168.96.40:81/acti/Redking/index?barcode=' + code);
+                } else if (type === 2) {	//开启炸弹游戏
+                    window.open ('http://zt.kmigo.cn/acti/redking/?barcode=' + code);
+                } else if (type === 3) {	//开启飞刀游戏
+                    window.open ('http://ktvme.imwork.net/acti/redking/index?&barcode=' + code);}
+                     else if (type === 4) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:82/acti/redking/index?&barcode=' + code + '&ver=82');}
+                    else if (type ===5) {	//开启飞刀游戏
+                    window.open ('http://192.168.96.40:82/acti/redking/index?&barcode=' + code + '&ver=84');}
+                    else if (type === 6) {	//开启飞刀游戏
+                    window.open ('http://192.168.96.40:82/acti/redfree/index?&barcode=' + code);}
+                    else if (type === 7) {	//开启飞刀游戏
+                    window.open ( 'http://192.168.96.40:81/acti/redfree/index?barcode=' + code + '&ver=82');}
+                    else if (type === 8) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.40:81/Acti/roomBoom/mobile?barcode=' + code);}
+                    else if (type === 9) {	//开启飞刀游戏
+                    window.open ('http://192.168.96.40:81/Acti/KnifeHit/mobile?DEBUG=1&barcode=' + code);}
+                    else if (type === 10) {	//开启飞刀游戏
+                    window.open ('http://192.168.96.40:81/Vroom/Live/chatroom?barcode=' + code);}
+                    else if (type === 11) {	//开启飞刀游戏
+                    window.open  ('http://192.168.96.24:8100/barcode.php?type=0&cc=08204&barcode=' + code + '&dev=ents');}
+
+
+			}
+			function Copy(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');}
+       function Copy2(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                 var code = document.getElementById("barcode").value;
+                // document.getElementById('id').innerHTML= document.getElementById('id').innerHTML+ document.getElementById('barCode').value
+                 console.log(Url2);
+                 console.log(code);
+                Url2=Url2+code;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');
+    }
+</script>
+</body>
+</html>

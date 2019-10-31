@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分屏游戏</title>
+           <style>
+           table
+           {border-collapse: collapse;}
+           table, td, th {
+               border: 1px solid black;}
+</style>
+</head>
+<input style="font-size: 20px" type="text" id="barcode" placeholder="请输入绑定码" value={{ bindCode }}>
+<body>
+<table>
+  <tr>
+    <th>简介</th>
+    <th>地址</th>
+      <th>操作</th>
+  </tr>
+    <tr>
+    <td>hold歌1.0</td>
+      <td id="id3">http://192.168.96.24:8100/barcode.php?type=11&barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id3')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(1)">提交</button>
+		</div>
+    </td>
+  </tr>
+
+  <tr>
+    <td>hold歌2.0</td>
+    <td id="id4">http://192.168.96.24:8100/barcode.php?type=13&barcode=</td>
+      <td><div class="container">
+			<button onclick="Copy2('id4')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(2)">提交</button>
+		</div>
+      </td>
+  </tr>
+
+    <tr>
+    <td>N11分屏轮播地址</td>
+    <td id="id1" onclick="Copy(this.id)">http://192.168.96.40:81/Split/Screen/index</td>
+      <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Split/Screen/index')">提交</button>
+		</div>
+      </td>
+  </tr>
+ <tr>
+    <td>N20分屏轮播地址</td>
+      <td id="id2" onclick="Copy(this.id)">http://192.168.96.40:81/Split/Screen/index2</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Split/Screen/index2')">提交</button>
+		</div>
+    </td>
+  </tr>
+</table>
+<script>
+
+
+            function tar(type) {
+                var code = document.getElementById("barcode").value;
+                console.log(code);
+                {#alert(code)#}
+                if (!code) {
+                    alert("绑定码不能为空");
+                    return;
+                }
+
+                if (type === 1) {	//开启红包游戏
+                 window.open ('http://192.168.96.24:8100/barcode.php?type=11&barcode=' + code);
+                } else if (type === 2) {	//开启炸弹游戏
+                    window.open ('http://192.168.96.24:8100/barcode.php?type=13&barcode=' + code);
+                }
+			}
+			function Copy(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');}
+            function Copy2(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                 var code = document.getElementById("barcode").value;
+                // document.getElementById('id').innerHTML= document.getElementById('id').innerHTML+ document.getElementById('barCode').value
+                 console.log(Url2);
+                 console.log(code);
+                Url2=Url2+code;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');
+    }
+</script>
+
+</body>
+</html>

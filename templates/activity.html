@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运营活动</title>
+     <style>
+           table
+           {border-collapse: collapse;}
+           table, td, th {
+               border: 1px solid black;}
+</style>
+</head>
+<body>
+<input style="font-size: 20px"type="text" id="barcode" placeholder="请输入绑定码" value={{ bindCode }}>
+
+<table>
+  <tr>
+    <th>简介</th>
+    <th>地址</th>
+      <th>操作</th>
+  </tr>
+
+
+ <tr>
+    <td>K米VIP+美团红包秒杀活动(9.9)</td>
+      <td id="id1" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/VipActivity/meituan?ctype=1&kpm_channel=15060000</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://kmtest.ktvme.com:3007/User/VipActivity/meituan?ctype=1&kpm_channel=15060000')">提交</button>
+		</div>
+    </td>
+  </tr>
+
+  <tr>
+    <td>秒杀活动中间页</td>
+    <td id="id2" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/Wap/app/meituanFocus</td>
+      <td>
+        <div class="container">
+			<button onclick="window.open ('http://kmtest.ktvme.com:3007/Wap/app/meituanFocus')">提交</button>
+		</div>
+      </td>
+  </tr>
+
+    <tr>
+    <td>K米VIP+美团红包秒杀活动(3.9)</td>
+    <td id="id3" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/VipActivity/meituan?ctype=2&kpm_channel=11040000</td>
+      <td>
+        <div class="container">
+			<button onclick="window.open ('http://kmtest.ktvme.com:3007/User/VipActivity/meituan?ctype=2&kpm_channel=11040000')">提交</button>
+		</div>
+      </td>
+  </tr>
+ <tr>
+    <td>美团红包独立售卖（1.9）</td>
+      <td id="id4" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/Acti/MeiTuanVip/index</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://kmtest.ktvme.com:3007/Acti/MeiTuanVip/index')">提交</button>
+		</div>
+    </td>
+  </tr>
+   <tr>
+    <td>超值大礼包</td>
+      <td id="id5" onclick="Copy(this.id)">http://192.168.96.40:81/Acti/GiftBag/index</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Acti/GiftBag/index')">提交</button>
+		</div>
+    </td>
+  </tr>
+
+    <tr>
+    <td>骰子欢乐斗</td>
+      <td id="id6" onclick="Copy(this.id)">http://192.168.96.23/Acti/DiceBattle/</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.23/Acti/DiceBattle')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>开通VIP领取会员卡</td>
+      <td id="id7" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/MembershipCard/apply</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://kmtest.ktvme.com:3007/User/MembershipCard/apply')">提交</button>
+		</div>
+
+    </td>
+  </tr>
+   <tr>
+    <td>K米欢唱卡</td>
+      <td id="id30">http://192.168.96.40:81/Acti/VipCoupon2/index?companycode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id30')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(8)">提交</button>
+		</div>
+    </td>
+  </tr>
+     <tr>
+    <td>K米欢唱卡-中间页</td>
+      <td id="id8" onclick="Copy(this.id)">http://192.168.96.40:81/Acti/VipCoupon/index?kpm_channel=15060000</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Acti/VipCoupon/index?kpm_channel=15060000')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>2019VIP春节大促活动</td>
+      <td id="id9" onclick="Copy(this.id)">http://192.168.96.40:81/User/VipActivity/promotionOfNewyear?playmusic=1</td>
+    <td>
+
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/User/VipActivity/promotionOfNewyear?playmusic=1')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>大促活动-中间页</td>
+      <td id="id10">http://192.168.96.40:81/Wap/app/vipspringfocus?type=123&barcode=&kpm_channel=15060000</td>
+    <td><div class="container">
+			<button onclick="Copy2('id10')">复制</button>
+		</div>
+
+        <div class="container">
+			<button onclick="tar(11)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>K米&网易云活动</td>
+      <td id="id11" onclick="Copy(this.id)">http://192.168.96.40:81/Acti/NetEase/indexNetEase?activityid=1</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Acti/NetEase/indexNetEase?activityid=1')">提交</button>
+		</div>
+    </td>
+  </tr>
+
+    <tr>
+    <td>K米&网易云活动（不带按钮）</td>
+      <td id="id12" onclick="Copy(this.id)">http://192.168.96.40:81/Acti/NetEase/indexNetEase?activityid=1&btn=-1</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Acti/NetEase/indexNetEase?activityid=1&btn=-1')">提交</button>
+		</div>
+    </td>
+  </tr>
+
+  <tr>
+    <td>歌曲冠名</td>
+    <td id="id31">http://192.168.96.40:81/Acti/SongHeadlines/index?barcode=</td>
+      <td><div class="container">
+			<button onclick="Copy2('id31')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(14)">提交</button>
+		</div>
+      </td>
+  </tr>
+
+    <tr>
+    <td>用户段位</td>
+    <td id="id13" onclick="Copy(this.id)">http://192.168.96.40:81/User/paragraph/index</td>
+      <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/User/paragraph/index')">提交</button>
+		</div>
+      </td>
+  </tr>
+ <tr>
+    <td>用户段位领券活动</td>
+      <td id="id14" onclick="Copy(this.id)">http://192.168.96.40:81/User/Paragraph/ticketActOfParagraph</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/User/Paragraph/ticketActOfParagraph')">提交</button>
+		</div>
+    </td>
+  </tr>
+   <tr>
+    <td>主题拉新中间页	</td>
+      <td id="id15" onclick="Copy(this.id)">http://192.168.96.40:81/Vroom/ThemeMealBox/focus?type=123456&kpm_channel=11180000</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Vroom/ThemeMealBox/focus?type=123456&kpm_channel=11180000')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>主题拉新点赞活动页	</td>
+      <td id="id16" onclick="Copy(this.id)">http://192.168.96.40:81/Vroom/ThemeMealBox/open?kpm_channel=15060000</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Vroom/ThemeMealBox/open?kpm_channel=15060000')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>包厢VIP拉新领取页</td>
+      <td id="id32">http://192.168.96.40:81/User/VipBox/get?cid=4841064&oid=TYL19032818133343100555449&barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id32')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(19)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>包厢VIP拉新活动页</td>
+      <td id="id17" onclick="Copy(this.id)">http://192.168.96.40:81/User/VipBox/open?kpm_channel=11111000</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/User/VipBox/open?kpm_channel=11111000')">提交</button>
+		</div>
+    </td>
+  </tr>
+   <tr>
+    <td>挽留拉新ios页面</td>
+      <td id="id18" onclick="Copy(this.id)">http://192.168.96.40:81/User/PullNew/iostbspullnew </td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/User/PullNew/iostbspullnew ')">提交</button>
+		</div>
+    </td>
+  </tr>
+     <tr>
+    <td>线下拉新（活动页）</td>
+      <td id="id19" onclick="Copy(this.id)">http://192.168.96.40:81/Acti/Turntable/newuser?activityid=21</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Acti/Turntable/newuser?activityid=21')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>线下拉新（中间页）</td>
+      <td id="id33">http://192.168.96.40:81/User/PullNew/newuser88Focus?type=0&barcode= 3&dev=vga</td>
+    <td><div class="container">
+			<button onclick="Copy2('id33')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(23)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>线下拉新（机顶盒投屏点歌页 ）</td>
+      <td id="id20" onclick="Copy(this.id)">http://192.168.96.40:81/Event/Scan/vodQrcodeNewUser88</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Event/Scan/vodQrcodeNewUser88')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>邀请有礼</td>
+      <td id="id21" onclick="Copy(this.id)">http://192.168.96.40:81/Acti/Turntable/pullNew?activityid=17</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Acti/Turntable/pullNew?activityid=17')">提交</button>
+		</div>
+    </td>
+  </tr>
+       <tr>
+    <td>特权卡页面</td>
+      <td id="id22" onclick="Copy(this.id)">http://192.168.96.40:81/Acti/Diversion/start</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Acti/Diversion/start')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>预订入口地址（内网）</td>
+      <td id="id23" onclick="Copy(this.id)">http://kmtest.ktvme.cn:9509/Book/KmRoom/index.html?partner_key=Partners065b8eab75063c1e25cf0b8d</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://kmtest.ktvme.cn:9509/Book/KmRoom/index.html?partner_key=Partners065b8eab75063c1e25cf0b8d')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>预订入口地址（外网）</td>
+      <td id="id24" onclick="Copy(this.id)">http://weixindestine.ktvme.com/Book/KmRoom/index.html?project_type=3&partner_key=Partners2c80d47a82b47162fbba42e4</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://weixindestine.ktvme.com/Book/KmRoom/index.html?project_type=3&partner_key=Partners2c80d47a82b47162fbba42e4')">提交</button>
+		</div>
+    </td>
+  </tr>
+
+    <tr>
+    <td>福利中心首页</td>
+      <td id="id25" onclick="Copy(this.id)">http://192.168.96.40:81/User/Benefits/start </td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/User/Benefits/start')">提交</button>
+		</div>
+    </td>
+  </tr>
+</table>
+<script>
+
+
+            function tar(type) {
+                var code = document.getElementById("barcode").value;
+                console.log(code);
+                if (!code) {
+                    alert("绑定码不能为空");
+                    return;
+                }
+
+
+                if (type === 8) {	//开启飞刀游戏
+                     window.open ('http://192.168.96.40:81/Acti/VipCoupon2/index?companycode=' + code) ;}
+                    else if (type === 11) {	//开启飞刀游戏
+                     window.open ('http://192.168.96.40:81/Wap/app/vipspringfocus?type=123&barcode=' + code + '&kpm_channel=15060000');
+                    else if (type === 14) {	//开启飞刀游戏
+                     window.open( 'http://192.168.96.40:81/Acti/SongHeadlines/index?barcode=' + code );}
+                     else if (type === 19) {
+                       window.open ('http://192.168.96.40:81/User/VipBox/get?cid=4841064&oid=TYL19032818133343100555449&barcode=' + code);
+                    else if (type === 23) {	//开启飞刀游戏
+                    window.open ('http://192.168.96.40:81/User/PullNew/newuser88Focus?type=0&barcode=' + code  + '&dev=vga') ;}
+
+			}
+			function Copy(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');}
+            function Copy2(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                 var code = document.getElementById("barcode").value;
+                // document.getElementById('id').innerHTML= document.getElementById('id').innerHTML+ document.getElementById('barCode').value
+                 console.log(Url2);
+                 console.log(code);
+                Url2=Url2+code;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');
+    }
+</script>
+</body>
+</html>

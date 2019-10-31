@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信点歌</title>
+       <style>
+           table
+           {border-collapse: collapse;}
+           table, td, th {
+               border: 1px solid black;}
+</style>
+</head>
+<body>
+<input style="font-size: 20px" type="text" id="barcode" placeholder="请输入绑定码" value={{ bindCode }}>
+<table>
+  <tr>
+    <th>简介</th>
+    <th>地址</th>
+      <th>操作</th>
+  </tr>
+    <tr>
+    <td>微信点歌主页，内网绑定（03311）</td>
+      <td id="id1">http://192.168.96.24:8100/barcode.php?type=0&barcode=</td>
+         <td><div class="container">
+			<button onclick="Copy2('id1')">复制</button>
+		</div>
+
+        <div class="container">
+			<button onclick="tar(1)">提交</button>
+		</div>
+    </td>
+  </tr>
+
+  <tr>
+    <td>微信点歌主页，内网微信点歌(根据商家区分新旧) （03311新，08204旧）</td>
+    <td id="id2">http://192.168.96.40:9516/wap/app?barcode=</td>
+       <td><div class="container">
+			<button onclick="Copy2('id2')">复制</button>
+		</div>
+
+        <div class="container">
+			<button onclick="tar(2)">提交</button>
+		</div>
+      </td>
+  </tr>
+
+
+    <tr>
+    <td>解绑包厢</td>
+    <td id="id3" onclick="Copy(this.id)">http://192.168.96.40:9516/wap/app/unbind</td>
+      <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:9516/wap/app/unbind')">提交</button>
+		</div>
+      </td>
+  </tr>
+    <tr>
+    <td>我的信息</td>
+      <td id="id4" onclick="Copy(this.id)">http://192.168.96.40:81/red/mine</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/red/mine')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>微信点歌（新版强制旧版）</td>
+      <td id="id5" onclick="Copy(this.id)">http://192.168.96.40:9516/wap/app?toversion=1</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:9516/wap/app?toversion=1')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>微信点歌（新版）</td>
+      <td id="id6" onclick="Copy(this.id)">http://192.168.96.40:9516/song/wechat/</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:9516/song/wechat')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>发图片</td>
+      <td id="id7" onclick="Copy(this.id)">http://192.168.96.40:81/Vroom/Customface/start/</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Vroom/Customface/start')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>旧版点歌接入广点通广告	</td>
+      <td id="id8" onclick="Copy(this.id)">http://kmtest.ktvme.com:9539/wap/app/?toversion=1&sourceenter=nofocusbind#&pageHome</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://kmtest.ktvme.com:9539/wap/app/?toversion=1&sourceenter=nofocusbind#&pageHome')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>魔法表情</td>
+      <td id="id9" onclick="Copy(this.id)">http://192.168.96.40:81/Vroom/WishMagic/magicEmoticon</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Vroom/WishMagic/magicEmoticon')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>语音点歌（需走花生壳）</td>
+      <td id="id10" onclick="Copy(this.id)">http://ktvme.imwork.net/Wap/App/voiceRemote</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://ktvme.imwork.net/Wap/App/voiceRemote')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>手Q点歌（可直接扫二维码）</td>
+      <td id="id11" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/Vroom/Song?_nav_alpha=true</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://kmtest.ktvme.com:3007/Vroom/Song?_nav_alpha=true')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>广点通广告测试域名</td>
+      <td id="id12" onclick="Copy(this.id)">http://kmtest.ktvme.com:9539/song/wechat?from=kmdg</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://kmtest.ktvme.com:9539/song/wechat?from=kmdg')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>快捷支付白名单测试域名w</td>
+      <td id="id13" onclick="Copy(this.id)">http://kmdgtest.ktvme.com/song/wechat?from=kmdg</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://kmdgtest.ktvme.com/song/wechat?from=kmdg')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>照片MV-安卓支持多张照片选中</td>
+      <td id="id14" onclick="Copy(this.id)">http://ktvme.yicp.vip/song/wechat/</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://ktvme.yicp.vip/song/wechat')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>微信公众号-我的-下载APP</td>
+      <td id="id15" onclick="Copy(this.id)">http://192.168.96.40:81/event/app/kmapp?from=kmgzh&ds=388</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open('http://192.168.96.40:81/event/app/kmapp?from=kmgzh&ds=388')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>有的下载页</td>
+      <td id="id16" onclick="Copy(this.id)">http://192.168.96.40:81/Event/Scan/downloadPage</td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Event/Scan/downloadPage')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>大部分下载页（直接应用宝下载APP）</td>
+      <td id="id17">http://192.168.96.40:81/Event/Scan/download/?ds=414&code=-1</td>
+         <td><div class="container">
+			<button onclick="Copy2('id17')">复制</button>
+		</div>
+
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/Event/Scan/download/?ds=414&code=-1')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>20190604事件后修改替换url</td>
+      <td id="id18" onclick="Copy(this.id)">http://192.168.96.40:81/E/C/downloadPage </td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/E/C/downloadPage')">提交</button>
+		</div>
+    </td>
+  </tr>
+
+    <tr>
+    <td>K米登录页</td>
+      <td id="id19" onclick="Copy(this.id)">http://192.168.96.40:81/event/phone/ologin </td>
+    <td>
+        <div class="container">
+			<button onclick="window.open ('http://192.168.96.40:81/event/phone/ologin')">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>微信点歌桌贴二维码</td>
+      <td id="id20">http://192.168.96.40:9516/song/wechat/labelEntry?stbip=192.168.10.16&companycode= </td>
+    <td><div class="container">
+			<button onclick="Copy2('id20')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(3)">提交</button>
+		</div>
+    </td>
+  </tr>
+</table>
+<script>
+
+
+            function tar(type) {
+                var code = document.getElementById("barcode").value;
+                console.log(code);
+                if (!code) {
+                    alert("绑定码不能为空");
+                    return;
+                }
+
+                if (type === 1) {	//开启红包游戏
+                    window.open ('http://192.168.96.24:8100/barcode.php?type=0&barcode=' + code);
+                } else if (type === 2) {	//开启炸弹游戏
+                    window.open( 'http://192.168.96.40:9516/wap/app?barcode=' + code);
+                }
+                      else if (type === 3) {	//开启飞刀游戏
+                    window.open ('http://192.168.96.40:9516/song/wechat/labelEntry?stbip=192.168.10.16&companycode=' + code);}
+
+
+			}
+		    function Copy(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+               document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');
+    }
+            function Copy2(id) {
+                var Url2=document.getElementById(id).innerHTML;
+                 var code = document.getElementById("barcode").value;
+                // document.getElementById('id').innerHTML= document.getElementById('id').innerHTML+ document.getElementById('barCode').value
+                 console.log(Url2);
+                 console.log(code);
+                Url2=Url2+code;
+                var oInput = document.createElement('input');
+                oInput.value = Url2;
+                document.body.appendChild(oInput);
+                oInput.select(); // 选择对象
+                document.execCommand("Copy"); // 执行浏览器复制命令
+                oInput.className = 'oInput';
+                oInput.style.display='none';
+                alert('复制成功');
+    }
+</script>
+
+</body>
+</html>

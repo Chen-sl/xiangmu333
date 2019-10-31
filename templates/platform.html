@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>平台运营</title>
+           <style>
+           table
+           {border-collapse: collapse;}
+           table, td, th {
+               border: 1px solid black;}
+</style>
+</head>
+<input style="font-size: 20px" type="text" id="barcode" placeholder="请输入绑定码" value={{ bindCode }}>
+<body>
+<table>
+  <tr>
+    <th>简介</th>
+    <th>地址</th>
+      <th>操作</th>
+  </tr>
+ <tr>
+    <td>	微信点歌</td>
+      <td id="id1">http://192.168.96.40:81/Event/UnionScan/tv?scene=100&kmjmp=1&type=12345&barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id1')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(1)">提交</button>
+		</div>
+    </td>
+  </tr>
+
+  <tr>
+    <td>送祝福业务</td>
+    <td id="id2">http://192.168.96.40:81/Event/UnionScan/tv?scene=200&kmjmp=0&type=12345&barcode=</td>
+      <td><div class="container">
+			<button onclick="Copy2('id2')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(2)">提交</button>
+		</div>
+      </td>
+  </tr>
+
+    <tr>
+    <td>游戏业务</td>
+    <td id="id3">http://192.168.96.40:81/Event/UnionScan/tv?scene=300&kmjmp=1&type=12345&barcode=</td>
+      <td><div class="container">
+			<button onclick="Copy2('id3')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(3)">提交</button>
+		</div>
+      </td>
+  </tr>
+ <tr>
+    <td>主题拉新</td>
+      <td id="id4">http://192.168.96.40:9516/Event/UnionScan/tv?scene=400&kmjmp=0&type=12345&barcode=</td>
+    <td><div class="container">
+			<button onclick="Copy2('id4')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(4)">提交</button>
+		</div>
+    </td>
+  </tr>
+   <tr>
+    <td>点歌二维码默认跳转url</td>
+      <td id="id5">http://192.168.96.40:81/Event/Scan/index?barcode= &dev=vga&type=0</td>
+    <td><div class="container">
+			<button onclick="Copy2('id5')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(5)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>电视引导点歌H5）</td>
+      <td id="id6">http://192.168.96.40:81/Event/Scan/vodGuide?barcode= &companycode= &isint=1</td>
+    <td><div class="container">
+			<button onclick="Copy2('id6')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(6)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>电视引导点歌二维码</td>
+      <td id="id7">http://192.168.96.40:81/Event/Scan/vodMiddle?barcode= &kpm_channel=11090403</td>
+    <td><div class="container">
+			<button onclick="Copy2('id7')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(7)">提交</button>
+		</div>
+    </td>
+  </tr>
+    <tr>
+    <td>20190604事件后修改url</td>
+      <td id="id8" >http://192.168.96.40:81/E/P/tv?scene=202&kmjmp=0&type=12345&barcode= </td>
+    <td><div class="container">
+			<button onclick="Copy2('id8')">复制</button>
+		</div>
+        <div class="container">
+			<button onclick="tar(8)">提交</button>
+		</div>
+    </td>
+  </tr>
+
+</table>
+<script>
+    function tar(type) {
+        var code = document.getElementById("barcode").value;
+        alert(code);
+        console.log(code);
+        if (!code) {
+            alert("绑定码不能为空");
+            return;
+        }
+
+        if (type === 1) {	//开启红包游戏
+         {#location.href = 'http://192.168.96.40:81/Event/UnionScan/tv?scene=100&kmjmp=1&type=12345&barcode=' + code;#}
+            window.open('http://192.168.96.40:81/Event/UnionScan/tv?scene=100&kmjmp=1&type=12345&barcode=' + code);
+        } else if (type === 2) {	//开启炸弹游戏
+             window.open ('http://192.168.96.40:81/Event/UnionScan/tv?scene=200&kmjmp=0&type=12345&barcode=' + code);
+        } else if (type === 3) {	//开启飞刀游戏
+             window.open('http://192.168.96.40:81/Event/UnionScan/tv?scene=300&kmjmp=1&type=12345&barcode=' + code);}
+            else if (type === 4) {	//开启飞刀游戏
+             window.open ('http://192.168.96.40:9516/Event/UnionScan/tv?scene=400&kmjmp=0&type=12345&barcode=' + code);
+        } else if (type === 5) {	//开启飞刀游戏
+             window.open ('http://192.168.96.40:81/Event/Scan/index?barcode=' +  code + '&dev=vga&type=0');
+        }  else if (type ===6) {	//开启飞刀游戏
+            window.open ('http://192.168.96.40:81/Event/Scan/vodGuide?barcode=' + code + '&companycode=' + code + '&isint=1');
+        }else if (type === 7) {	//开启飞刀游戏
+             window.open ('http://192.168.96.40:81/Event/Scan/vodMiddle?barcode=' + code + '&kpm_channel=11090403');}
+            else if (type === 8) {	//开启飞刀游戏
+            window.open ('ttp://192.168.96.40:81/E/P/tv?scene=202&kmjmp=0&type=12345&barcode=' + code);}}
+    function Copy(id) {
+        var Url2=document.getElementById(id).innerHTML;
+        var oInput = document.createElement('input');
+        oInput.value = Url2;
+        document.body.appendChild(oInput);
+        oInput.select(); // 选择对象
+        document.execCommand("Copy"); // 执行浏览器复制命令
+        oInput.className = 'oInput';
+        oInput.style.display='none';
+        alert('复制成功');
+    }
+
+    function Copy2(id) {
+        {#alert('复制成功');#}
+        {#console.log("it's here");#}
+        var Url2=document.getElementById(id).innerHTML;
+        var code = document.getElementById("barcode").value;
+        // document.getElementById('id').innerHTML= document.getElementById('id').innerHTML+ document.getElementById('barCode').value
+        Url2=Url2+code;
+        var oInput = document.createElement('input');
+        oInput.value = Url2;
+        document.body.appendChild(oInput);
+        oInput.select(); // 选择对象
+        document.execCommand("Copy"); // 执行浏览器复制命令
+        oInput.className = 'oInput';
+        oInput.style.display='none';
+        alert('复制成功');
+    }
+</script>
+</body>
+</html>

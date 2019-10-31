@@ -7,6 +7,7 @@ app = Flask(__name__)
 cons=''
 @app.route('/')
 def index():
+    print('123')
     return render_template('index.html')
 @app.route('/<companyCode>')
 def bind(companyCode):

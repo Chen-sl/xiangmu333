@@ -1,87 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color: #FFE4B5;border-radius: 4px;" xmlns:left="http://www.w3.org/1999/xhtml" xmlns:float="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>主页</title>
-   <style type="text/css">
-		#top{
-		   margin: auto;
-		   align-content: center;
-		   text-align: center;
-		   {#margin-top: 100px;#}
-		}
-		#sel{
-			width: 200px;
-			height: 40px;
-            font-size: 15px
-		}
-		#content{
-		   margin: auto;
-		   text-align: center;
-		   margin-top: 30px;
-		   height: 900px
-		}
-		#iframe{
-		   width: 90%;
-		   height: 100%
-		}
-	</style>
-</head>
-{#<select>#}
-{#    <option value="03311">03311</option>#}
-{#    <option value="08204">08204</option>#}
-{##}
-{#</select>#}
-<a style="font-size: 30px" href="{{   url_for('bind',companyCode='03311')}}">绑定03311商家</a>
-<p></p>
-<a style="font-size: 30px" href="{{   url_for('bind',companyCode='08204')}}">绑定08204商家</a>
-{% if bindCode %}
-    <p>{{ bindCode }}</p>
-{% endif %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <style type="text/css">
+  		.top{
+		    margin: auto;
+		    align-content: center;
+		    text-align: center;
+            margin-bottom: 15px;
+		    {#margin-top: 100px;#}
+  		    }
+        .right {
+        position: absolute;
+         right: 0px;
+        width: 300px;
+         border: 3px solid #73AD21;
+        padding: 10px;
+ }
 
+  	</style>
+</head>
+<body>
+<div >
+
+  <form  class="navbar-form navbar-left" action="{{url_for('bind')}}" method="post" style="margin-right:10px;">
+       <div class="title1" style="font-size: 18px; font-weight: 600;padding: 8px 0;"> 1.选择你想要绑定的包厢</div>
+      <div class="form-group">
+          <label class="radio-inline">
+            <input type="radio" name="stbip" value="103311096123"/>03311
+        </label>
+    </div>
+      <div class="form-group">
+        <label class="radio-inline">
+            <input type="radio" name="stbip" value="108204096076"/>08204-76
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="radio-inline">
+            <input type="radio" name="stbip" value="108204096075"/>08204-75
+        </label>
+    </div>
+        <div class="form-group">
+        <label class="radio-inline">
+            <input type="radio" name="stbip" value="108204010104" />08204-104
+        </label>
+        </div>
+      <div class="form-group">
+        <label class="radio-inline">
+            <input type="radio" name="stbip" value="108204096077" />08204-77
+        </label>
+      </div>
+       <div class="form-group">
+         <label class="radio-inline">
+             <input type="radio" name="stbip" value="108204096078"/>08204-78
+         </label>
+       </div>
+      <div class="form-group">
+        <label class="radio-inline">
+           绑定码： <input name="codeEnter" style="font-size: 15px ;padding: 6px 0;" class="form-control" type="text" id="barcode" placeholder="可手动输入绑定码">
+        </label>
+      </div>
+    <button class="stb" type="submit">提交</button>
+  </form>
+{% if bindCode=='default' %}
+    <p>获取不到绑定码</p>
+{% else %}
+    <p>包厢绑定码为：{{ bindCode }}</p>
+{% endif %}
     <div id="top">
     <label for="sel"></label>
+       <div class="title2" style="font-size: 18px; font-weight: 600;padding: 10px 0;"> 2.选择你想要的业务</div>
+        <span> 业务选择：</span>
         <select id="sel" style="">
-          <option value="业务">业务 </option>
-          <option value="weixin">微信点歌</option>
-          <option value="platform">平台运营</option>
-          <option value="activity">运营活动</option>
-          <option value="VIP">VIP特权</option>
-          <option value="congratuations">包厢送祝福</option>
-          <option value="split">分屏游戏</option>
-          <option value="title">主题包厢&私人订制</option>
-          <option value="game">赛马游戏</option>
-          <option value="zhicheng">支撑业务</option>
-          <option value="KTV">平智慧KTV</option>
-          <option value="other">其他</option>
+            <option value="weixin">微信点歌</option>
+             <option value="platform">平台运营</option>
+            <option value="activity">运营活动</option>
+            <option value="VIP">VIP特权</option>
+            <option value="congratuations">包厢送祝福</option>
+            <option value="split">分屏游戏</option>
+            <option value="title">主题包厢&私人订制</option>
+            <option value="game">赛马游戏</option>
+            <option value="zhicheng">支撑业务</option>
+            <option value="KTV">平智慧KTV</option>
+            <option value="other">其他</option>
 	    </select>
     </div>
-    <div id="content">
-    	<iframe window.location.href="{{ url_for('weixin') }}"  id="iframe">
-            window.location.href="{{ url_for('platform') }}" id="iframe">
-             window.location.href="{{ url_for('activity') }}" id="iframe">
-            window.location.href="{{ url_for('VIP') }}" id="iframe">
-            window.location.href="{{ url_for('VIP') }}" id="iframe">
-            window.location.href="{{ url_for('congratuations') }}" id="iframe">
-            window.location.href="{{ url_for('congratuations') }}" id="iframe">
-            window.location.href="{{ url_for('split') }}" id="iframe">
-             window.location.href="{{ url_for('title') }}" id="iframe">
-            window.location.href="{{ url_for('game') }}" id="iframe">
-           window.location.href="{{ url_for('zhicheng') }}" id="iframe">
-             window.location.href="{{ url_for('KTV') }}" id="iframe">
-            window.location.href="{{ url_for('other') }}" id="iframe">
-        </iframe>
+    <div id="content" >
+{#    	<iframe   id="iframe" style="border: 0px" width="100%" scrolling="auto"  >        </iframe>#}
+        <iframe id="iframe" style="border: 0px" width="100%" scrolling="auto" src="http://192.168.96.100:5000/weixin"> </iframe>
     </div>
-
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
 	 $("#sel").change(function () {
             var value= $(this).val();
+            value = 'http://192.168.96.100:5000/' + value;
+            console.log(value);
             $('#iframe').attr('src',value);
 
-});
 
+});
 </script>
+</div>
 </body>
 </html>
 

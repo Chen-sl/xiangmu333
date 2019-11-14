@@ -3,133 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <title>赛马游戏</title>
-           <style>
-           table
-           {border-collapse: collapse;}
-           table, td, th {
-               border: 1px solid black;}
-</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-table.min.css">
+  	<script src="./js/bootstrap-table.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style type="text/css">
+        .table1 tr td{
+            text-align:center;
+    	    word-wrap:break-word;
+    	    word-break:break-all;
+    	    white-space:normal;
+    	    max-width:300px;
+            {#border-bottom:1px solid #BBB;#}
+            text-align: left;
+        }
+       	</style>
 </head>
 <body>
-<input style="font-size: 20px" type="text" id="barcode" placeholder="请输入绑定码" value={{ bindCode }}>
-<table>
-  <tr>
-    <th>简介</th>
-    <th>地址</th>
-      <th>操作</th>
-  </tr>
- <tr>
-    <td>PC版赛马手机端</td>
-      <td id="id6">http://192.168.96.40:81/Acti/HorseRace/shake?from=sjgzh&cc=</td>
-    <td><div class="container">
-			<button onclick="Copy2('id6')">复制</button>
-		</div>
-        <div class="container">
-			<button onclick="tar(1)">提交</button>
-		</div>
-    </td>
-  </tr>
+<div>
+	     <table class="table1 table" cellspacing="auto" width="auto" id="fresh-table" style="
+    font-size: 12px;">
+			<tbody>
+			<tr>
+                <th colspan="3" align="left">功能1:PC版赛马手机端</th></tr>
+          <tr><td align="left" style="width: 30px">内网</td>
+              <td id="id1" onclick="tar(this.id)" ><a href="http://192.168.96.40:81/Acti/HorseRace/shake?from=sjgzh&cc={{ bindCode }}">http://192.168.96.40:81/Acti/HorseRace/shake?from=sjgzh&cc={{ bindCode }}</a></td>
+				<td><div class="container">
+						<button style=" display: block; width: 50px;" id="copyCode" class="copy" data-clipboard-target="#id1" data-clipboard-action="copy">复制</button>
+					</div>
+				</td>
+               <tr><td align="left">外网</td>
+                <td id="id2" onclick="tar(this.id)" ><a href="http://kmtest.ktvme.com:81/Acti/HorseRace/shake?from=sjgzh&cc={{ bindCode }}">http://kmtest.ktvme.com:81/Acti/HorseRace/shake?from=sjgzh&cc={{ bindCode }}</a></td>
+				<td><div class="container">
+						<button style=" display: block; width: 50px;" id="copyCode" class="copy" data-clipboard-target="#id2" data-clipboard-action="copy">复制</button>
+					</div>
+				</td>
+			</tr>
 
-  <tr>
-    <td>包厢版赛马</td>
-      <td id="id1" >http://192.168.96.40:81/Acti/KHorseRace/shake?type=123&barcode= </td>
-      <td><div class="container">
-			<button onclick="Copy2('id1')">复制</button>
-		</div>
-        <div class="container">
-			<button onclick="tar(2)">提交</button>
-		</div>
-  </td>
-  </tr>
+			<tr>
+                <th colspan="3" align="left">功能2:包厢版赛马</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id3" onclick="tar(this.id)" ><a href="http://192.168.96.40:81/Acti/KHorseRace/shake?type=123&barcode={{ bindCode }}">http://192.168.96.40:81/Acti/KHorseRace/shake?type=123&barcode={{ bindCode }}</a> </td>
+				  <td><div class="container">
+						<button  id="copyCode" class="copy" data-clipboard-target="#id3" data-clipboard-action="copy">复制</button>
+					</div>
+				</td>
+              <tr><td align="left">外网</td>
+                <td id="id4" onclick="tar(this.id)" ><a href="http://kmtest.ktvme.com:81/Acti/KHorseRace/shake?type=123&barcode={{ bindCode }}">http://kmtest.ktvme.com:81/Acti/KHorseRace/shake?type=123&barcode={{ bindCode }}</a> </td>
+				  <td><div class="container">
+						<button  id="copyCode" class="copy" data-clipboard-target="#id4" data-clipboard-action="copy">复制</button>
+					</div>
+				</td>
+			</tr>
 
-    <tr>
-    <td>包厢赛马后台配置入口-手机端游戏页面</td>
-    <td id="id5" onclick="Copy(this.id)">http://192.168.96.40:81/Acti/NHorseRace/GameRoom</td>
-      <td>
-        <div class="container">
-			<button onclick=" window.open ('http://192.168.96.40:81/Acti/NHorseRace/GameRoom')">提交</button>
-		</div>
-      </td>
-  </tr>
- <tr>
-    <td>包厢赛马后台配置入口-电视屏端游戏页面</td>
-      <td id="id2" onclick="Copy(this.id)">http://192.168.96.40:81/Acti/NHorseRace/PCGameRoom</td>
-    <td>
-        <div class="container">
-			<button onclick=" window.open ('http://192.168.96.40:81/Acti/NHorseRace/PCGameRoom')">提交</button>
-		</div>
-    </td>
-  </tr>
-   <tr>
-    <td>包厢赛马后台配置入口-电视屏端预约页面</td>
-      <td id="id3" onclick="Copy(this.id)">http://192.168.96.40:81/Acti/NHorseRace/PCbook</td>
-    <td>
-        <div class="container">
-			<button onclick=" window.open('http://192.168.96.40:81/Acti/NHorseRace/PCbook')">提交</button>
-		</div>
-    </td>
-  </tr>
-    <tr>
-    <td>包厢赛马后台配置入口-电视屏端倒计时页面</td>
-      <td id="id4" onclick="Copy(this.id)"> http://192.168.96.40:81/Acti/NHorseRace/PCcountdown</td>
-    <td>
+			<tr>
+                <th colspan="3" align="left">功能3:包厢赛马后台配置入口-手机端游戏页面</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id5" onclick="tar(this.id)"><a  href="http://192.168.96.40:81/Acti/NHorseRace/GameRoom">http://192.168.96.40:81/Acti/NHorseRace/GameRoom</a></td>
+				<td>
+					<div class="container">
+						 <button  id="copyCode" class="copy" data-clipboard-target="#id5" data-clipboard-action="copy">复制</button>
+					</div>
+				</td>
+               <tr><td align="left">外网</td>
+                <td id="id6" onclick="tar(this.id)"><a href="http://kmtest.ktvme.com:81/Acti/NHorseRace/GameRoom">http://kmtest.ktvme.com:81/Acti/NHorseRace/GameRoom</a></td>
+				<td>
+					<div class="container">
+						 <button  id="copyCode" class="copy" data-clipboard-target="#id6" data-clipboard-action="copy">复制</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+                <th colspan="3" align="left">功能4:包厢赛马后台配置入口-电视屏端游戏页面</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id7" onclick="tar(this.id)" ><a href="http://192.168.96.40:81/Acti/NHorseRace/PCGameRoom">http://192.168.96.40:81/Acti/NHorseRace/PCGameRoom</a></td>
+				<td>
+					<div class="container">
+						 <button  id="copyCode" class="copy" data-clipboard-target="#id7" data-clipboard-action="copy">复制</button>
+					</div>
+				</td>
+                <tr><td align="left">外网</td>
+                <td id="id8" onclick="tar(this.id)" ><a href="http://kmtest.ktvme.com:81/Acti/NHorseRace/PCGameRoom">http://kmtest.ktvme.com:81/Acti/NHorseRace/PCGameRoom</a></td>
+				<td>
+					<div class="container">
+						 <button  id="copyCode" class="copy" data-clipboard-target="#id8" data-clipboard-action="copy">复制</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+                <th colspan="3" align="left">功能5:包厢赛马后台配置入口-电视屏端预约页面</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id9" onclick="tar(this.id)"><a  href="http://192.168.96.40:81/Acti/NHorseRace/PCbook">http://192.168.96.40:81/Acti/NHorseRace/PCbook</a></td>
+				<td>
+					<div class="container">
+						 <button  id="copyCode" class="copy" data-clipboard-target="#id9" data-clipboard-action="copy">复制</button>
+					</div>
+				</td>
+                <tr><td align="left">外网</td>
+                <td id="id10" onclick="tar(this.id)" ><a href="http://kmtest.ktvme.com:81/Acti/NHorseRace/PCbook">http://kmtest.ktvme.com:81/Acti/NHorseRace/PCbook</a></td>
+				<td>
+					<div class="container">
+						 <button  id="copyCode" class="copy" data-clipboard-target="#id10" data-clipboard-action="copy">复制</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+                <th colspan="3" align="left">功能6:包厢赛马后台配置入口-电视屏端倒计时页面</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id11" onclick="tar(this.id)"><a href="http://192.168.96.40:81/Acti/NHorseRace/PCcountdown"> http://192.168.96.40:81/Acti/NHorseRace/PCcountdown</a></td>
+				<td>
+					<div class="container">
+						 <button  id="copyCode" class="copy" data-clipboard-target="#id11" data-clipboard-action="copy">复制</button>
+					</div>
+				</td>
+               <tr><td align="left">外网</td>
+                <td id="id12" onclick="tar(this.id)" ><a href="http://kmtest.ktvme.com:81/Acti/NHorseRace/PCcountdown"> http://kmtest.ktvme.com:81/Acti/NHorseRace/PCcountdown</a></td>
+				<td>
+					<div class="container">
+						 <button  id="copyCode" class="copy" data-clipboard-target="#id12" data-clipboard-action="copy">复制</button>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	<script src="./js/base.js"></script>
+	<script>
+		function tar(id) {
 
-        <div class="container">
-			<button onclick=" window.open ('http://192.168.96.40:81/Acti/NHorseRace/PCcountdown')">提交</button>
-		</div>
-    </td>
-  </tr>
+        console.log(id);
+        var url1 = document.getElementById(id).innerHTML;
+        window.open (url1);}
 
-</table>
-<script>
+		 var clipboard = new ClipboardJS('.copy');
+             clipboard.on('success', function(e){
+                 alert('复制成功')
+             });
+            clipboard.on('error', function(e){
+            alert('复制失败')
+            });
 
-
-            function tar(type) {
-                var code = document.getElementById("barcode").value;
-                console.log(code);
-                if (!code) {
-                    alert("绑定码不能为空");
-                    return;
-                }
-
-                if (type === 1) {	//开启红包游戏
-                 window.open ( 'http://192.168.96.40:81/Acti/HorseRace/shake?from=sjgzh&cc=' + code);
-                } else if (type === 2) {	//开启炸弹游戏
-                    window.open ('http://192.168.96.40:81/Acti/KHorseRace/shake?type=123&barcode=' + code);
-                }
-			}
-			function Copy(id) {
-                var Url2=document.getElementById(id).innerHTML;
-                // var code = document.getElementById("barcode").value;
-                // document.getElementById('id').innerHTML= document.getElementById('id').innerHTML+ document.getElementById('barCode').value
-                // console.log(Url2);
-                // console.log(code);
-             //   Url2=Url2+code;
-                var oInput = document.createElement('input');
-                oInput.value = Url2;
-                document.body.appendChild(oInput);
-                oInput.select(); // 选择对象
-                document.execCommand("Copy"); // 执行浏览器复制命令
-                oInput.className = 'oInput';
-                oInput.style.display='none';
-                alert('复制成功');
-    }
-    function Copy2(id) {
-                var Url2=document.getElementById(id).innerHTML;
-                 var code = document.getElementById("barcode").value;
-                // document.getElementById('id').innerHTML= document.getElementById('id').innerHTML+ document.getElementById('barCode').value
-                 console.log(Url2);
-                 console.log(code);
-                Url2=Url2+code;
-                var oInput = document.createElement('input');
-                oInput.value = Url2;
-                document.body.appendChild(oInput);
-                oInput.select(); // 选择对象
-                document.execCommand("Copy"); // 执行浏览器复制命令
-                oInput.className = 'oInput';
-                oInput.style.display='none';
-                alert('复制成功');
-    }
-</script>
+	</script>
 </body>
 </html>

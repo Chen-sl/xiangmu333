@@ -3,129 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <title>VIP特权</title>
-           <style>
-           table
-           {border-collapse: collapse;}
-           table, td, th {
-               border: 1px solid black;}
-</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-table.min.css">
+    <script src="./js/bootstrap-table.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style type="text/css">
+        .table1 tr td{
+            text-align:center;
+    	    word-wrap:break-word;
+    	    word-break:break-all;
+    	    white-space:normal;
+    	    max-width:300px;
+            {#border-bottom:1px solid #BBB;#}
+        }
+       	</style>
 </head>
 
 <body>
-{#<input type="text" id="barcode" placeholder="请输入绑定码">#}
-<table>
-  <tr>
-    <th>简介</th>
-    <th>地址</th>
-      <th>操作</th>
-  </tr>
- <tr>
-    <td>充值VIP</td>
-      <td id="id1" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/Vip/wechat</td>
-    <td>
-        <div class="container">
-			<button onclick="window.open('http://kmtest.ktvme.com:3007/User/Vip/wechat')">提交</button>
-		</div>
-    </td>
-  </tr>
+      <table class="table1 table" cellspacing="auto" width="auto" id="fresh-table" style="
+    font-size: 12px;">
+      <tbody>
+        <tr>
+            <th colspan="3" align="left">功能1:充值VIP</th></tr>
+          <tr><td align="left" style=" width: 30px;">内网</td>
+              <td id="id1" onclick="tar(this.id)" style="text-align: left;"><a href="http://192.168.96.40:3007/User/Vip/wechat">http://192.168.96.40:3007/User/Vip/wechat</a></td>
+          <td>
+              <div class="container">
+            <button style=" display: block; width: 50px;" id="copyCode" class="copy" data-clipboard-target="#id1" data-clipboard-action="copy">复制</button>
+          </div>
+          </td>
+                <tr><td align="left">外网</td>
+            <td id="id2" onclick="tar(this.id)"style="text-align: left;"><a href="http://kmtest.ktvme.com:3007/User/Vip/wechat">http://kmtest.ktvme.com:3007/User/Vip/wechat</a></td>
+          <td>
+              <div class="container">
+            <button style=" display: block; width: 50px;" id="copyCode" class="copy" data-clipboard-target="#id2" data-clipboard-action="copy">复制</button>
+          </div>
+          </td>
+        </tr>
 
-  <tr>
-    <td>赠送VIP（花生壳）</td>
-    <td id="id2" onclick="Copy(this.id)">http://ktvme.imwork.net/User/GivenVip/start</td>
-      <td>
-        <div class="container">
-			<button onclick="window.open('http://ktvme.imwork.net/User/GivenVip/start')">提交</button>
-		</div>
-      </td>
-  </tr>
+        <tr>
+            <th colspan="3" align="left">功能2:赠送VIP（花生壳）</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id3" onclick="tar(this.id)" style="text-align: left;"><a href="http://192.168.96.40t/User/GivenVip/start">http://192.168.96.40t/User/GivenVip/start</a></td>
+            <td>
+              <div class="container">
+           <button  id="copyCode" class="copy" data-clipboard-target="#id3" data-clipboard-action="copy">复制</button>
+          </div>
+            </td>
+               <tr><td align="left">外网</td>
+            <td id="id4" onclick="tar(this.id)"style="text-align: left;"><a href="http://ktvme.imwork.net/User/GivenVip/start">http://ktvme.imwork.net/User/GivenVip/start</a></td>
+            <td>
+              <div class="container">
+           <button  id="copyCode" class="copy" data-clipboard-target="#id4" data-clipboard-action="copy">复制</button>
+          </div>
+            </td>
+        </tr>
 
-    <tr>
-    <td>购买VIP-iOS支持微信支付</td>
-    <td id="id3" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/Vip/app?upt=1</td>
-      <td>
-        <div class="container">
-			<button onclick="window.open('http://kmtest.ktvme.com:3007/User/Vip/app?upt=1')">提交</button>
-		</div>
-      </td>
-  </tr>
- <tr>
-    <td>手Q充值VIP-qq打开这个页面，点左上角，可以退出</td>
-      <td id="id4" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/Vip?upt=1&closetype=1</td>
-    <td>
-        <div class="container">
-			<button onclick="window.open('http://kmtest.ktvme.com:3007/User/Vip?upt=1&closetype=1')">提交</button>
-		</div>
-    </td>
-  </tr>
-   <tr>
-    <td>幸运大转盘</td>
-       <td id="id5" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/Acti/Turntable/index?activityid=3</td>
-    <td>
-        <div class="container">
-			<button onclick="window.open('http://kmtest.ktvme.com:3007/Acti/Turntable/index?activityid=3')">提交</button>
-		</div>
-       </td>
-  </tr>
-    <tr>
-    <td>月费充值抽奖</td>
-      <td id="id6" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/VipActivity/luck</td>
-    <td>
-        <div class="container">
-			<button onclick="window.open('http://kmtest.ktvme.com:3007/User/VipActivity/luck')">提交</button>
-		</div>
-    </td>
-  </tr>
-    <tr>
-    <td>年费充值抽奖</td>
-      <td id="id7" onclick="Copy(this.id)">http://kmtest.ktvme.com:3007/User/VipActivity/luckyear</td>
-    <td>
-        <div class="container">
-			<button onclick="window.open('http://kmtest.ktvme.com:3007/User/VipActivity/luckyear')">提交</button>
-		</div>
-    </td>
-  </tr>
-    <tr>
-    <td>QQ svip魔法表情</td>
-      <td id="id8" onclick="Copy(this.id)">	http://192.168.96.40:81/User/SvipPlus/detail</td>
-    <td>
-        <div class="container">
-			<button onclick="window.open('http://192.168.96.40:81/User/SvipPlus/detail')">提交</button>
-		</div>
-    </td>
-  </tr>
-    <tr>
-    <td>QQ SVIP开通</td>
-      <td id="id9" onclick="Copy(this.id)">http://192.168.96.28:8106/Vip/Giving/send?customeridlist=4240920&viptype=1&businessid=131&remark=%E8%B0%83%E8%AF%95qqsvip&operator=yanxiuxin&vipleveltype=3</td>
-    <td>
-        <div class="container">
-			<button onclick="window.open('http://192.168.96.28:8106/Vip/Giving/send?customeridlist=4240920&viptype=1&businessid=131&remark=%E8%B0%83%E8%AF%95qqsvip&operator=yanxiuxin&vipleveltype=3')">提交</button>
-		</div>
-    </td>
-  </tr>
-</table>
+          <tr>
+              <th colspan="3" align="left">功能3:购买VIP-iOS支持微信支付</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id5" onclick="tar(this.id)"style="text-align: left;"><a  href="http://192.168.96.40:3007/User/Vip/app?upt=1">http://192.168.96.40:3007/User/Vip/app?upt=1</a></td>
+            <td>
+              <div class="container">
+             <button  id="copyCode" class="copy" data-clipboard-target="#id5" data-clipboard-action="copy">复制</button>
+          </div>
+            </td>
+              <tr><td align="left">外网</td>
+            <td id="id6" onclick="tar(this.id)" style="text-align: left;"><a href="http://kmtest.ktvme.com:3007/User/Vip/app?upt=1">http://kmtest.ktvme.com:3007/User/Vip/app?upt=1</a></td>
+            <td>
+              <div class="container">
+             <button  id="copyCode" class="copy" data-clipboard-target="#id6" data-clipboard-action="copy">复制</button>
+          </div>
+            </td>
+        </tr>
+       <tr>
+           <th colspan="3" align="left">功能4:手Q充值VIP-qq打开这个页面，点左上角，可以退出</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id7" onclick="tar(this.id)" style="text-align: left;"><a href="http://192.168.96.40:3007/User/Vip?upt=1&closetype=1">http://192.168.96.40:3007/User/Vip?upt=1&closetype=1</a></td>
+          <td>
+              <div class="container">
+            <button  id="copyCode" class="copy" data-clipboard-target="#id7" data-clipboard-action="copy">复制</button>
+          </div>
+          </td>
+              <tr><td align="left">外网</td>
+            <td id="id8" onclick="tar(this.id)" style="text-align: left;"><a href="http://kmtest.ktvme.com:3007/User/Vip?upt=1&closetype=1">http://kmtest.ktvme.com:3007/User/Vip?upt=1&closetype=1</a></td>
+          <td>
+              <div class="container">
+            <button  id="copyCode" class="copy" data-clipboard-target="#id8" data-clipboard-action="copy">复制</button>
+          </div>
+          </td>
+        </tr>
+         <tr>
+             <th colspan="3" align="left">功能5:幸运大转盘</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id9" onclick="tar(this.id)"style="text-align: left;"><a href="http://192.168.96.40:3007/Acti/Turntable/index?activityid=3">http://192.168.96.40:3007/Acti/Turntable/index?activityid=3</a></td>
+          <td>
+              <div class="container">
+            <button  id="copyCode" class="copy" data-clipboard-target="#id9" data-clipboard-action="copy">复制</button>
+          </div>
+             </td>
+               <tr><td align="left">外网</td>
+            <td id="id10" onclick="tar(this.id)"style="text-align: left;" ><a href="http://kmtest.ktvme.com:3007/Acti/Turntable/index?activityid=3">http://kmtest.ktvme.com:3007/Acti/Turntable/index?activityid=3</a></td>
+          <td>
+              <div class="container">
+            <button  id="copyCode" class="copy" data-clipboard-target="#id10" data-clipboard-action="copy">复制</button>
+          </div>
+             </td>
+        </tr>
+          <tr>
+              <th colspan="3" align="left">功能6:月费充值抽奖</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id11" onclick="tar(this.id)"style="text-align: left;"><a href="http://192.168.96.40:3007/User/VipActivity/luck">http://192.168.96.40:3007/User/VipActivity/luck</a></td>
+          <td>
+              <div class="container">
+             <button  id="copyCode" class="copy" data-clipboard-target="#id11" data-clipboard-action="copy">复制</button>
+          </div>
+          </td>
+              <tr><td align="left">外网</td>
+            <td id="id12" onclick="tar(this.id)" style="text-align: left;"><a href="http://kmtest.ktvme.com:3007/User/VipActivity/luck">http://kmtest.ktvme.com:3007/User/VipActivity/luck</a></td>
+          <td>
+              <div class="container">
+             <button  id="copyCode" class="copy" data-clipboard-target="#id12" data-clipboard-action="copy">复制</button>
+          </div>
+          </td>
+        </tr>
+          <tr>
+              <th colspan="3" align="left">功能7:年费充值抽奖</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id13" onclick="tar(this.id)" style="text-align: left;"><a href="http:/192.168.96.40:3007/User/VipActivity/luckyear">http:/192.168.96.40:3007/User/VipActivity/luckyear</a></td>
+          <td>
+              <div class="container">
+            <button  id="copyCode" class="copy" data-clipboard-target="#id13" data-clipboard-action="copy">复制</button>
+          </div>
+          </td>
+               <tr><td align="left">外网</td>
+            <td id="id14" onclick="tar(this.id)"style="text-align: left;" ><a href="http://kmtest.ktvme.com:3007/User/VipActivity/luckyea">http://kmtest.ktvme.com:3007/User/VipActivity/luckyear</a></td>
+          <td>
+              <div class="container">
+            <button  id="copyCode" class="copy" data-clipboard-target="#id14" data-clipboard-action="copy">复制</button>
+          </div>
+          </td>
+        </tr>
+          <tr>
+              <th colspan="3" align="left">功能8:QQ svip魔法表情</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id15" onclick="tar(this.id)"style="text-align: left;" ><a href="http://192.168.96.40:81/User/SvipPlus/detail"> http://192.168.96.40:81/User/SvipPlus/detail</a></td>
+          <td>
+              <div class="container">
+            <button  id="copyCode" class="copy" data-clipboard-target="#id15" data-clipboard-action="copy">复制</button>
+          </div>
+          </td>
+               <tr><td align="left">外网</td>
+            <td id="id16" onclick="tar(this.id)"style="text-align: left;"><a href=" http://kmtest.ktvme.com:81/User/SvipPlus/detail"> http://kmtest.ktvme.com:81/User/SvipPlus/detail</a></td>
+          <td>
+              <div class="container">
+            <button  id="copyCode" class="copy" data-clipboard-target="#id16" data-clipboard-action="copy">复制</button>
+          </div>
+          </td>
+        </tr>
+          <tr>
+              <th colspan="3" align="left">功能9:QQ SVIP开通</th></tr>
+          <tr><td align="left">内网</td>
+              <td id="id17" onclick="tar(this.id)" style="text-align: left;"><a href="http://192.168.96.28:8106/Vip/Giving/send?customeridlist=4240920&viptype=1&businessid=131&remark=%E8%B0%83%E8%AF%95qqsvip&operator=yanxiuxin&vipleveltype=3">http://192.168.96.28:8106/Vip/Giving/send?customeridlist=4240920&viptype=1&businessid=131&remark=%E8%B0%83%E8%AF%95qqsvip&operator=yanxiuxin&vipleveltype=3</a></td>
+          <td>
+              <div class="container">
+             <button  id="copyCode" class="copy" data-clipboard-target="#id17" data-clipboard-action="copy">复制</button>
+          </div>
+          </td>
+                 <tr><td align="left">外网</td>
+            <td id="id18" onclick="tar(this.id)" style="text-align: left;"><a href="http://kmtest.ktvme.com:8106/Vip/Giving/send?customeridlist=4240920&viptype=1&businessid=131&remark=%E8%B0%83%E8%AF%95qqsvip&operator=yanxiuxin&vipleveltype=3">http://kmtest.ktvme.com:8106/Vip/Giving/send?customeridlist=4240920&viptype=1&businessid=131&remark=%E8%B0%83%E8%AF%95qqsvip&operator=yanxiuxin&vipleveltype=3</a></td>
+          <td>
+              <div class="container">
+             <button  id="copyCode" class="copy" data-clipboard-target="#id18" data-clipboard-action="copy">复制</button>
+          </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+<script src="./js/base.js"></script>
 <script>
-
-
-            function tar(type) {
-                var code = document.getElementById("barcode").value;
-                console.log(code);
-                if (!code) {
-                    alert("绑定码不能为空");
-
-                }
-
-			}
-            function Copy(id) {
-                var Url2=document.getElementById(id).innerHTML;
-                var oInput = document.createElement('input');
-                oInput.value = Url2;
-                document.body.appendChild(oInput);
-                oInput.select(); // 选择对象
-                document.execCommand("Copy"); // 执行浏览器复制命令
-                oInput.className = 'oInput';
-                oInput.style.display='none';
-                alert('复制成功');}
-
+  function tar(type) {
+      var code = document.getElementById("barcode").value;
+      console.log(code);
+      if (!code) {
+          alert("绑定码不能为空");
+      }
+	}
+        var clipboard = new ClipboardJS('.copy');
+             clipboard.on('success', function(e){
+                 alert('复制成功')
+             });
+            clipboard.on('error', function(e){
+            alert('复制失败')
+            });
 </script>
 
 </body>

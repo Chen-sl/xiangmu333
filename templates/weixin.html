@@ -5,11 +5,11 @@
     <title>微信点歌</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+<!--     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/bootstrap-table.min.css">
-    <script src="./js/bootstrap-table.min.js"></script>
+    <script src="./js/bootstrap-table.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <style type="text/css">
         .table1 tr td{
@@ -26,6 +26,9 @@
        	</style>
 </head>
 <body>
+{% if bindCode=='default' %}
+{% set bindCode='' %}
+{% endif %}
 	<div >
      <table class="table1 table" cellspacing="auto" width="auto" id="fresh-table" style="
     font-size: 12px;">

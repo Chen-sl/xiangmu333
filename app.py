@@ -180,10 +180,10 @@ def ssh2(ip, username, passwd, cmd):
     # for ip in iplist:
     #     threads.append(threading.Thread(target=ssh2, args=(ip, username, passwd, cmd)))  # 添加到线程池中
     try:
-        ssh = paramiko.SSHClient()
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh.connect(ip, 22, username, passwd, timeout=5)
-
+        ssh = paramiko.SSHClient()        #创建sshclient
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())  #目的是接受不在本地Known_host文件下的主机
+        ssh.connect(ip, 22, username, passwd, timeout=5)         #connect 函数可以接受很多参数
+ 
         '''从远程服务器上获取包厢绑定码'''
         for m in cmd:
             stdin, stdout, stderr = ssh.exec_command(m)
